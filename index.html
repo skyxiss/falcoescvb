@@ -1,0 +1,2771 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FALCOES VBC, Clube Oficial, Xinguara - PA</title>
+  <meta
+    name="description"
+    content="Site oficial do FALCOES VBC (@voleifalcoes) em Xinguara - PA. Uniformes oficiais, mural de jogadores, fundadores, regras, FAQ, ficha de cadastro e painel de edicao."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --primary: #cfd2d6;
+      --secondary: #1f2023;
+      --bg: #0b0b0c;
+      --text: #ecebe8;
+      --surface: #171616;
+      --on-primary: #141414;
+      --on-secondary: #ffffff;
+      --border-subtle: #26272b;
+      --radius: 4px;
+      --hf: 'Space Grotesk', sans-serif;
+      --bf: 'Inter', sans-serif;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--bf);
+      font-size: 16px;
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .font-heading {
+      font-family: var(--hf);
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+      margin: 0;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    @media (min-width: 640px) {
+      .container {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+    }
+
+    .section-block {
+      padding-top: 56px;
+      padding-bottom: 56px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    @media (min-width: 768px) {
+      .section-block {
+        padding-top: 76px;
+        padding-bottom: 76px;
+      }
+    }
+
+    .card-surface {
+      background-color: var(--surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius);
+    }
+
+    .input-field {
+      width: 100%;
+      background-color: var(--bg);
+      color: var(--text);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius);
+      padding: 10px 12px;
+      font-family: var(--bf);
+      font-size: 14px;
+      transition: border-color 0.2s ease;
+    }
+
+    .input-field:focus {
+      border-color: var(--primary);
+    }
+
+    .input-field::placeholder {
+      color: rgba(236, 235, 232, 0.45);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 42px;
+      padding: 10px 18px;
+      border-radius: var(--radius);
+      font-family: var(--hf);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: var(--on-primary);
+      border-color: var(--primary);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--text);
+      border-color: var(--text);
+    }
+
+    .btn-secondary {
+      background-color: var(--secondary);
+      color: var(--on-secondary);
+      border-color: var(--border-subtle);
+    }
+
+    .btn-secondary:hover {
+      background-color: #292b30;
+      border-color: var(--primary);
+    }
+
+    .btn-danger {
+      background-color: #261416;
+      color: #f4c7cb;
+      border-color: rgba(244, 199, 203, 0.28);
+    }
+
+    .btn-danger:hover {
+      background-color: #381b1e;
+    }
+
+    /* Cabecalho */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background-color: rgba(11, 11, 12, 0.95);
+      border-bottom: 1px solid var(--border-subtle);
+      backdrop-filter: blur(8px);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 68px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .brand-logo {
+      width: 42px;
+      height: 42px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      border: 1px solid var(--border-subtle);
+      background-color: var(--surface);
+      flex-shrink: 0;
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 18px;
+      font-family: var(--hf);
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--primary);
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    @media (min-width: 960px) {
+      .nav-links {
+        display: flex;
+      }
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    /* Hero */
+    .hero-section {
+      padding-top: 28px;
+      padding-bottom: 56px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    @media (min-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1.25fr 0.75fr;
+        gap: 36px;
+      }
+    }
+
+    .hero-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--text);
+      margin-top: 10px;
+    }
+
+    @media (min-width: 640px) {
+      .hero-title {
+        font-size: 46px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero-title {
+        font-size: 54px;
+      }
+    }
+
+    .hero-subtitle {
+      margin-top: 16px;
+      font-size: 15px;
+      color: var(--primary);
+      max-width: 75ch;
+    }
+
+    @media (min-width: 640px) {
+      .hero-subtitle {
+        font-size: 17px;
+      }
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .hero-info-card {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .hero-cover-thumb {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      border: 1px solid var(--border-subtle);
+    }
+
+    /* Grades */
+    .section-head {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    @media (min-width: 768px) {
+      .section-head {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+      }
+    }
+
+    .section-title {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--text);
+      margin-top: 6px;
+    }
+
+    @media (min-width: 640px) {
+      .section-title {
+        font-size: 36px;
+      }
+    }
+
+    .section-desc {
+      margin-top: 8px;
+      font-size: 14px;
+      color: var(--primary);
+      max-width: 75ch;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    @media (min-width: 540px) {
+      .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .grid-4 {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Uniformes e sacola */
+    .uniform-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    .uniform-img-wrap {
+      aspect-ratio: 4 / 3;
+      background-color: var(--bg);
+      border-bottom: 1px solid var(--border-subtle);
+      overflow: hidden;
+    }
+
+    .uniform-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .uniform-body {
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .uniform-top-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .badge-tag {
+      display: inline-block;
+      padding: 4px 8px;
+      background-color: var(--secondary);
+      color: var(--primary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius);
+      font-family: var(--hf);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .uniform-footer {
+      padding: 0 18px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .bag-box {
+      margin-top: 24px;
+      padding: 20px;
+    }
+
+    /* Mural de jogadores */
+    .player-card {
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .player-avatar {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      border: 1px solid var(--border-subtle);
+      background-color: var(--bg);
+      flex-shrink: 0;
+    }
+
+    /* Lideranca */
+    .founder-card {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    @media (min-width: 540px) {
+      .founder-card {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+    }
+
+    .founder-photo {
+      width: 92px;
+      height: 92px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      border: 1px solid var(--border-subtle);
+      background-color: var(--bg);
+      flex-shrink: 0;
+    }
+
+    /* Passos e regras */
+    .steps-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .step-item {
+      padding: 16px;
+      background-color: var(--bg);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius);
+    }
+
+    /* Sobre e FAQ */
+    .about-faq-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    @media (min-width: 900px) {
+      .about-faq-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+    }
+
+    .faq-item {
+      border: 1px solid var(--border-subtle);
+      background-color: var(--surface);
+      border-radius: var(--radius);
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+
+    .faq-trigger {
+      width: 100%;
+      background: transparent;
+      color: var(--text);
+      border: 0;
+      padding: 14px 16px;
+      text-align: left;
+      font-family: var(--hf);
+      font-size: 15px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      cursor: pointer;
+    }
+
+    .faq-panel {
+      padding: 12px 16px 16px;
+      border-top: 1px solid var(--border-subtle);
+      font-size: 14px;
+      color: var(--primary);
+    }
+
+    /* Contato destaque */
+    .contact-highlight {
+      background-color: var(--primary);
+      color: var(--on-primary);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+    }
+
+    @media (min-width: 768px) {
+      .contact-highlight {
+        padding: 48px 40px;
+      }
+    }
+
+    .contact-title {
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--on-primary);
+      margin-top: 8px;
+    }
+
+    @media (min-width: 640px) {
+      .contact-title {
+        font-size: 44px;
+      }
+    }
+
+    /* Rodape */
+    .site-footer {
+      background-color: var(--surface);
+      border-top: 1px solid var(--border-subtle);
+      padding: 32px 0;
+      font-size: 13px;
+      color: var(--primary);
+    }
+
+    /* Toast e Modais */
+    .toast {
+      position: fixed;
+      top: 78px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 60;
+      width: calc(100% - 32px);
+      max-width: 520px;
+      background-color: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--primary);
+      border-radius: var(--radius);
+      padding: 12px 16px;
+      font-size: 13px;
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.65);
+    }
+
+    .toast.is-visible {
+      display: flex;
+    }
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      background-color: rgba(0, 0, 0, 0.82);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      overflow-y: auto;
+    }
+
+    .modal-backdrop.is-open {
+      display: flex;
+    }
+
+    .modal-box {
+      width: 100%;
+      max-width: 440px;
+      background-color: var(--surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius);
+      padding: 24px;
+      max-height: 92vh;
+      overflow-y: auto;
+    }
+
+    .modal-box--wide {
+      max-width: 980px;
+      margin: auto;
+    }
+
+    .admin-section {
+      padding-top: 20px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .form-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    @media (min-width: 640px) {
+      .form-grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .form-grid-3 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    @media (min-width: 768px) {
+      .form-grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .field-label {
+      display: block;
+      font-family: var(--hf);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Cabecalho e navegacao -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#topo" class="brand-link">
+        <img
+          id="ui-header-logo"
+          src="https://rblmnlycyjzoxdmhejxd.supabase.co/storage/v1/object/public/product-images/784f5e8a-790c-4ff3-9e0d-96e3e91854d5/mvp/1795357584320-nk1j1p.webp"
+          alt="Logo oficial do FALCOES VBC em Xinguara - PA"
+          class="brand-logo"
+          onerror="this.src='https://placehold.co/84x84/171616/cfd2d6?text=FVBC'"
+        />
+        <div>
+          <p id="ui-header-sub" style="font-family: var(--hf); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--primary);">
+            Clube Oficial, Xinguara - PA
+          </p>
+          <p id="ui-header-name" style="font-family: var(--hf); font-size: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text);">
+            FALCOES VBC
+          </p>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Navegacao principal">
+        <a href="#uniformes">Uniformes</a>
+        <a href="#mural">Mural</a>
+        <a href="#fundadores">Fundadores</a>
+        <a href="#participar">Como Participar</a>
+        <a href="#sobre">Sobre e FAQ</a>
+        <a href="#cadastro">Cadastro</a>
+      </nav>
+
+      <div class="header-actions">
+        <button id="btn-open-admin-top" type="button" class="btn btn-secondary">
+          Painel de Edicao
+        </button>
+        <a href="#cadastro" class="btn btn-primary">
+          FAZER CADASTRO
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Aviso de status sem alert() -->
+  <div id="toast" class="toast" role="status" aria-live="polite">
+    <span id="toast-message">Mensagem</span>
+    <button id="btn-close-toast" type="button" class="btn btn-secondary" style="min-height: 32px; padding: 4px 10px; font-size: 11px;">
+      Fechar
+    </button>
+  </div>
+
+  <main id="topo">
+    <!-- 1. Topo e Hero -->
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <div>
+          <p id="ui-hero-eyebrow" style="font-family: var(--hf); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--primary);">
+            Clube Oficial, Xinguara - PA, @voleifalcoes
+          </p>
+          <h1 id="ui-hero-title" class="hero-title">
+            Falcoes Volei de Areia, Quadra, Evolucao e Resenha
+          </h1>
+          <p id="ui-hero-subtitle" class="hero-subtitle">
+            Ponto de encontro oficial do @voleifalcoes em Xinguara - PA. Conheca nossa cultura na areia, confira os mantos do clube, veja o elenco no mural e faca seu cadastro para jogar com a gente.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#cadastro" class="btn btn-primary">
+              FAZER CADASTRO
+            </a>
+            <a href="#uniformes" class="btn btn-secondary">
+              Ver Uniformes
+            </a>
+            <a href="https://wa.me/5594984437081" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              WhatsApp 5594984437081
+            </a>
+          </div>
+        </div>
+
+        <aside class="card-surface hero-info-card">
+          <img
+            id="ui-hero-cover"
+            src="https://rblmnlycyjzoxdmhejxd.supabase.co/storage/v1/object/public/product-images/784f5e8a-790c-4ff3-9e0d-96e3e91854d5/mvp/1795368606135-hdv07o.webp"
+            alt="Quadra de areia e encontros do FALCOES VBC em Xinguara - PA"
+            class="hero-cover-thumb"
+            onerror="this.src='https://placehold.co/600x360/171616/cfd2d6?text=FALCOES+VBC+XINGUARA'"
+          />
+          <div style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: var(--primary);">
+            <p style="font-family: var(--hf); font-size: 14px; font-weight: 700; color: var(--text);">
+              Funcionamento em Xinguara - PA
+            </p>
+            <p id="ui-hours-text">
+              Partidas e treinos na areia em Xinguara - PA. Atendimento direto no WhatsApp 5594984437081.
+            </p>
+            <p id="ui-contact-mini">
+              E-mail: falcoesvoleibol@gmail.com
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- 2. Uniformes oficiais (ate 3 uniformes + sacola WhatsApp) -->
+    <section id="uniformes" class="section-block">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p style="font-family: var(--hf); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--primary);">
+              Uniformes Oficiais do Clube
+            </p>
+            <h2 class="section-title">Mantimentos e Uniformes (Ate 3 Modelos)</h2>
+            <p class="section-desc">
+              Escolha o tamanho, adicione a sacola de encomenda e envie o pedido pronto para o WhatsApp 5594984437081.
+            </p>
+          </div>
+          <button id="btn-edit-uniforms" type="button" class="btn btn-secondary">
+            Editar Uniformes
+          </button>
+        </div>
+
+        <div id="uniforms-grid" class="grid-3"></div>
+
+        <!-- Sacola de encomenda -->
+        <div class="card-surface bag-box">
+          <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 14px;">
+            <h3 style="font-size: 18px; font-weight: 700; color: var(--text);">
+              Sacola de Encomenda (<span id="bag-count">0</span>)
+            </h3>
+            <strong id="bag-total" style="font-family: var(--hf); font-size: 16px; color: var(--text);">
+              R$ 0,00
+            </strong>
+          </div>
+
+          <div id="bag-items-list" style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; font-size: 14px; color: var(--primary);">
+            <p>Nenhum uniforme adicionado na sacola ainda.</p>
+          </div>
+
+          <div class="form-grid-2" style="align-items: end;">
+            <div>
+              <label for="bag-custom-name" class="field-label">Nome e numero para estampar (opcional)</label>
+              <input id="bag-custom-name" type="text" placeholder="Ex: FALCAO 07" class="input-field" />
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <button id="btn-send-bag-wa" type="button" class="btn btn-primary" style="flex: 1;">
+                Enviar Sacola no WhatsApp
+              </button>
+              <button id="btn-clear-bag" type="button" class="btn btn-secondary">
+                Limpar Sacola
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Mural de jogadores -->
+    <section id="mural" class="section-block">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p style="font-family: var(--hf); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--primary);">
+              Elenco e Comunidade em Xinguara - PA
+            </p>
+            <h2 class="section-title">Mural de Jogadores</h2>
+            <p class="section-desc">
+              Atletas cadastrados no mural do FALCOES VBC. Filtre por nivel ou busque por nome e posicao.
+            </p>
+          </div>
+
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center;">
+            <label for="mural-search" class="sr-only">Buscar jogador</label>
+            <input id="mural-search" type="search" placeholder="Buscar por nome ou posicao" class="input-field" style="width: 210px;" />
+
+            <label for="mural-level-filter" class="sr-only">Filtrar nivel</label>
+            <select id="mural-level-filter" class="input-field" style="width: auto;">
+              <option value="Todos">Todos os niveis</option>
+              <option value="Iniciante">Iniciante</option>
+              <option value="Intermediario">Intermediario</option>
+              <option value="Avancado">Avancado</option>
+            </select>
+
+            <button id="btn-edit-players" type="button" class="btn btn-secondary">
+              Gerenciar Mural
+            </button>
+          </div>
+        </div>
+
+        <div id="players-grid" class="grid-4"></div>
+      </div>
+    </section>
+
+    <!-- 4. Lideranca e fundadores -->
+    <section id="fundadores" class="section-block">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p style="font-family: var(--hf); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--primary);">
+              Origem e Direcao do Clube
+            </p>
+            <h2 class="section-title">Fundadores e Lideranca</h2>
+            <p class="section-desc">
+              Conheca SKY, fundador do clube, e MIKELLE, cofundadora e responsavel pela escolha do nome FALCOES.
+            </p>
+          </div>
+          <button id="btn-edit-founders" type="button" class="btn btn-secondary">
+            Editar Fundadores
+          </button>
+        </div>
+
+        <div id="founders-grid" class="grid-2"></div>
+      </div>
+    </section>
+
+    <!-- 5. Como participar e regras -->
+    <section id="participar" class="section-block">
+      <div class="container grid-2">
+        <div class="card-surface" style="padding: 24px;">
+          <p style="font-family: var(--hf); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--primary);">
+            Passo a Passo
+          </p>
+          <h2 class="section-title" style="font-size: 26px; margin-bottom: 18px;">
+            Como Participar do Falcoes
+          </h2>
+          <ol id="steps-container" class="steps-list"></ol>
+        </div>
+
+        <div class="card-surface" style="padding: 24px;">
+          <p style="font-family: var(--hf); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--primary);">
+            Convivencia na Quadra
+          </p>
+          <h2 class="section-title" style="font-size: 26px; margin-bottom: 18px;">
+            Regras da Casa e Resenha
+          </h2>
+          <ol id="rules-container" class="steps-list"></ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Sobre nos e FAQ -->
+    <section id="sobre" class="section-block">
+      <div class="container about-faq-grid">
+        <div class="card-surface" style="padding: 24px;">
+          <p style="font-family: var(--hf); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--primary);">
+            Sobre Nos, Nossa Historia e Cultura
+          </p>
+          <h2 class="section-title" style="font-size: 28px; margin-bottom: 14px;">
+            Cultura na Areia em Xinguara - PA
+          </h2>
+          <div id="about-paragraphs" style="display: flex; flex-direction: column; gap: 12px; font-size: 15px; color: var(--primary); max-width: 75ch;"></div>
+        </div>
+
+        <div id="faq">
+          <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 14px;">
+            <div>
+              <p style="font-family: var(--hf); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--primary);">
+                Duvidas Frequentes
+              </p>
+              <h2 class="section-title" style="font-size: 28px;">Perguntas Frequentes</h2>
+            </div>
+            <button id="btn-edit-faq" type="button" class="btn btn-secondary">
+              Editar FAQ
+            </button>
+          </div>
+          <div id="faq-container"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Ficha de cadastro de atletas -->
+    <section id="cadastro" class="section-block">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p style="font-family: var(--hf); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--primary);">
+              Inscricao de Atletas
+            </p>
+            <h2 class="section-title">Ficha de Cadastro</h2>
+            <p class="section-desc">
+              Preencha seus dados para jogar com o FALCOES VBC em Xinguara - PA. Envie pelo WhatsApp 5594984437081 ou copie a ficha pronta.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-2" style="align-items: start;">
+          <form id="registration-form" class="card-surface" style="padding: 24px; display: flex; flex-direction: column; gap: 14px;" novalidate>
+            <div class="form-grid-2">
+              <div>
+                <label for="reg-name" class="field-label">Nome ou apelido</label>
+                <input id="reg-name" type="text" required placeholder="Ex: Rafael Costa" class="input-field" />
+              </div>
+              <div>
+                <label for="reg-phone" class="field-label">WhatsApp do atleta</label>
+                <input id="reg-phone" type="text" required placeholder="Ex: (94) 98443-7081" class="input-field" />
+              </div>
+            </div>
+
+            <div class="form-grid-2">
+              <div>
+                <label for="reg-role" class="field-label">Modalidade ou posicao</label>
+                <select id="reg-role" class="input-field">
+                  <option value="Oposto">Oposto</option>
+                  <option value="Levantador">Levantador</option>
+                  <option value="Ponteiro">Ponteiro</option>
+                  <option value="Central">Central</option>
+                  <option value="Libero">Libero</option>
+                  <option value="Duplas e Quartetos">Duplas e Quartetos</option>
+                  <option value="Misto">Misto</option>
+                </select>
+              </div>
+              <div>
+                <label for="reg-level" class="field-label">Nivel de jogo</label>
+                <select id="reg-level" class="input-field">
+                  <option value="Iniciante">Iniciante</option>
+                  <option value="Intermediario" selected>Intermediario</option>
+                  <option value="Avancado">Avancado</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="reg-schedule" class="field-label">Dias e horarios disponiveis</label>
+              <input id="reg-schedule" type="text" required placeholder="Ex: Noites durante a semana e sabados a tarde" class="input-field" />
+            </div>
+
+            <div>
+              <label for="reg-notes" class="field-label">Observacoes (opcional)</label>
+              <input id="reg-notes" type="text" placeholder="Ex: Interesse no Manto Titular tamanho M" class="input-field" />
+            </div>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px;">
+              <button type="submit" class="btn btn-primary" style="flex: 1;">
+                Enviar pelo WhatsApp
+              </button>
+              <button id="btn-copy-reg" type="button" class="btn btn-secondary">
+                Copiar Ficha Pronta
+              </button>
+              <button id="btn-reset-reg" type="button" class="btn btn-secondary">
+                Limpar
+              </button>
+            </div>
+          </form>
+
+          <div class="card-surface" style="padding: 24px; display: flex; flex-direction: column; gap: 14px;">
+            <h3 style="font-size: 18px; font-weight: 700; color: var(--text);">
+              Ficha Pronta e Historico Local
+            </h3>
+            <pre
+              id="reg-preview"
+              style="margin: 0; background-color: var(--bg); border: 1px solid var(--border-subtle); border-radius: var(--radius); padding: 14px; font-family: var(--bf); font-size: 13px; color: var(--text); white-space: pre-wrap;"
+            >Ficha de Cadastro FALCOES VBC (Xinguara - PA)
+Nome ou apelido: A preencher
+WhatsApp: A preencher
+Modalidade ou posicao: Oposto
+Nivel: Intermediario
+Dias e horarios: A preencher</pre>
+
+            <a id="reg-wa-link" href="https://wa.me/5594984437081" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              Abrir WhatsApp 5594984437081
+            </a>
+
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 12px;">
+              <p class="field-label">Fichas montadas neste navegador</p>
+              <div id="reg-history-list" style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--primary);">
+                <p>Nenhuma ficha salva ainda.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Bloco de contato em destaque -->
+    <section id="contato" style="padding: 56px 0;">
+      <div class="container">
+        <div class="contact-highlight">
+          <p style="font-family: var(--hf); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--on-primary);">
+            Contato Oficial, FALCOES VBC
+          </p>
+          <h2 class="contact-title">
+            JOGUE COM O FALCOES EM XINGUARA
+          </h2>
+          <p id="ui-contact-details" style="margin-top: 12px; font-size: 15px; font-weight: 500; color: var(--on-primary); max-width: 75ch;">
+            WhatsApp e telefone: 5594984437081 | E-mail: falcoesvoleibol@gmail.com | Instagram: @voleifalcoes
+          </p>
+          <p style="margin-top: 10px; font-size: 16px; font-weight: 700; color: var(--on-primary);">
+            Endereco: <span id="ui-contact-city" style="text-decoration: underline; text-underline-offset: 4px;">Xinguara - PA</span>
+          </p>
+
+          <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px;">
+            <a id="ui-contact-wa-btn" href="https://wa.me/5594984437081" target="_blank" rel="noopener noreferrer" class="btn" style="background-color: var(--on-primary); color: var(--text);">
+              Falar no WhatsApp 5594984437081
+            </a>
+            <a href="#cadastro" class="btn" style="background-color: var(--text); color: var(--on-primary); border-color: rgba(20, 20, 20, 0.25);">
+              Preencher Ficha de Cadastro
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodape -->
+  <footer class="site-footer">
+    <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px;">
+      <div>
+        <strong id="ui-footer-brand" style="font-family: var(--hf); font-size: 15px; color: var(--text);">FALCOES VBC</strong>
+        <span>, Clube Oficial, Xinguara - PA. Tel: </span>
+        <span id="ui-footer-phone">5594984437081</span>
+        <span> | </span>
+        <span id="ui-footer-email">falcoesvoleibol@gmail.com</span>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px;">
+        <a id="ui-footer-ig" href="https://instagram.com/voleifalcoes" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; text-underline-offset: 3px;">
+          Instagram
+        </a>
+        <a id="ui-footer-wa" href="https://wa.me/5594984437081" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; text-underline-offset: 3px;">
+          WhatsApp
+        </a>
+        <button id="btn-open-admin-footer" type="button" class="btn btn-secondary" style="min-height: 36px; padding: 6px 14px; font-size: 12px;">
+          Painel de Edicao
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal de login do painel de edicao -->
+  <div id="login-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="login-title">
+    <div class="modal-box">
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 12px; margin-bottom: 14px;">
+        <h2 id="login-title" style="font-size: 20px; font-weight: 700; color: var(--text);">
+          Acesso ao Painel de Edicao
+        </h2>
+        <button id="btn-close-login" type="button" class="btn btn-secondary" style="min-height: 34px; padding: 4px 10px; font-size: 11px;">
+          Fechar
+        </button>
+      </div>
+
+      <p style="font-size: 13px; color: var(--primary); margin-bottom: 14px;">
+        Entre com a senha do administrador para editar uniformes, mural, fundadores, FAQ e dados do clube. Senha inicial padrao: <strong style="color: var(--text);">falcoes2026</strong>.
+      </p>
+
+      <form id="login-form" style="display: flex; flex-direction: column; gap: 14px;">
+        <div>
+          <label for="login-password" class="field-label">Senha de acesso</label>
+          <input id="login-password" type="password" required placeholder="Digite a senha" class="input-field" />
+        </div>
+        <button type="submit" class="btn btn-primary">
+          Entrar no Painel
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal do painel de edicao autenticado -->
+  <div id="admin-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="admin-title">
+    <div class="modal-box modal-box--wide">
+      <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 14px;">
+        <div>
+          <p style="font-family: var(--hf); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--primary);">
+            Sessao Protegida, FALCOES VBC
+          </p>
+          <h2 id="admin-title" style="font-size: 24px; font-weight: 700; color: var(--text);">
+            Painel de Edicao do Clube
+          </h2>
+        </div>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+          <button id="btn-export-json" type="button" class="btn btn-secondary">Exportar JSON</button>
+          <button id="btn-import-json" type="button" class="btn btn-secondary">Importar JSON</button>
+          <button id="btn-restore-default" type="button" class="btn btn-danger">Restaurar Padrao</button>
+          <button id="btn-logout-admin" type="button" class="btn btn-secondary">Sair</button>
+          <button id="btn-close-admin" type="button" class="btn btn-primary">Concluir</button>
+        </div>
+      </div>
+
+      <!-- a) Dados gerais e senha -->
+      <div class="admin-section">
+        <h3 style="font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 12px;">
+          a) Dados Gerais do Clube e Senha de Acesso
+        </h3>
+
+        <div class="form-grid-3">
+          <div>
+            <label for="adm-title" class="field-label">Titulo principal</label>
+            <input id="adm-title" type="text" class="input-field" />
+          </div>
+          <div>
+            <label for="adm-city" class="field-label">Cidade</label>
+            <input id="adm-city" type="text" class="input-field" />
+          </div>
+          <div>
+            <label for="adm-whatsapp" class="field-label">WhatsApp e telefone</label>
+            <input id="adm-whatsapp" type="text" class="input-field" />
+          </div>
+          <div>
+            <label for="adm-email" class="field-label">E-mail oficial</label>
+            <input id="adm-email" type="text" class="input-field" />
+          </div>
+          <div>
+            <label for="adm-instagram" class="field-label">Link do Instagram</label>
+            <input id="adm-instagram" type="text" class="input-field" />
+          </div>
+          <div>
+            <label for="adm-new-password" class="field-label">Alterar senha do painel</label>
+            <input id="adm-new-password" type="password" placeholder="Nova senha (opcional)" class="input-field" />
+          </div>
+        </div>
+
+        <div style="margin-top: 12px;">
+          <label for="adm-subtitle" class="field-label">Subtitulo</label>
+          <textarea id="adm-subtitle" rows="2" class="input-field"></textarea>
+        </div>
+
+        <div style="margin-top: 12px;">
+          <label for="adm-hours" class="field-label">Informacoes de funcionamento</label>
+          <input id="adm-hours" type="text" class="input-field" />
+        </div>
+
+        <div style="margin-top: 12px;">
+          <label for="adm-about" class="field-label">Historia do clube (separe paragrafos com linha em branco)</label>
+          <textarea id="adm-about" rows="4" class="input-field"></textarea>
+        </div>
+
+        <button id="btn-save-general" type="button" class="btn btn-primary" style="margin-top: 14px;">
+          Salvar Dados Gerais
+        </button>
+      </div>
+
+      <!-- b) Gerenciar ate 3 uniformes -->
+      <div class="admin-section">
+        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 12px;">
+          <h3 style="font-size: 18px; font-weight: 700; color: var(--text);">
+            b) Uniformes Oficiais (Ate 3 Uniformes)
+          </h3>
+          <button id="btn-add-uniform" type="button" class="btn btn-secondary">
+            Adicionar Uniforme (Max 3)
+          </button>
+        </div>
+        <div id="admin-uniforms-container" class="grid-3"></div>
+      </div>
+
+      <!-- c) Mural de jogadores -->
+      <div class="admin-section">
+        <h3 style="font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 12px;">
+          c) Mural de Jogadores (Adicionar, Editar e Remover)
+        </h3>
+
+        <form id="admin-add-player-form" class="card-surface form-grid-3" style="padding: 14px; background-color: var(--bg); margin-bottom: 14px;">
+          <div>
+            <label for="new-player-name" class="field-label">Nome ou apelido</label>
+            <input id="new-player-name" type="text" required placeholder="Ex: Thiago Lima" class="input-field" />
+          </div>
+          <div>
+            <label for="new-player-pos" class="field-label">Funcao ou posicao</label>
+            <input id="new-player-pos" type="text" required placeholder="Ex: Ponteiro" class="input-field" />
+          </div>
+          <div>
+            <label for="new-player-level" class="field-label">Nivel</label>
+            <select id="new-player-level" class="input-field">
+              <option value="Iniciante">Iniciante</option>
+              <option value="Intermediario" selected>Intermediario</option>
+              <option value="Avancado">Avancado</option>
+            </select>
+          </div>
+          <div>
+            <label for="new-player-photo-url" class="field-label">Foto por URL</label>
+            <input id="new-player-photo-url" type="text" placeholder="https://..." class="input-field" />
+          </div>
+          <div>
+            <label for="new-player-photo-file" class="field-label">Ou arquivo local da foto</label>
+            <input id="new-player-photo-file" type="file" accept="image/*" class="input-field" style="padding: 7px;" />
+          </div>
+          <div style="display: flex; align-items: flex-end;">
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              Adicionar ao Mural
+            </button>
+          </div>
+        </form>
+
+        <div id="admin-players-container" style="display: flex; flex-direction: column; gap: 10px;"></div>
+      </div>
+
+      <!-- d) Fundadores e lideranca -->
+      <div class="admin-section">
+        <h3 style="font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 12px;">
+          d) Fundadores e Lideranca (SKY, MIKELLE e Novos)
+        </h3>
+
+        <form id="admin-add-founder-form" class="card-surface form-grid-3" style="padding: 14px; background-color: var(--bg); margin-bottom: 14px;">
+          <div>
+            <label for="new-founder-role" class="field-label">Funcao ou cargo</label>
+            <input id="new-founder-role" type="text" required placeholder="Ex: FUNDADOR" class="input-field" />
+          </div>
+          <div>
+            <label for="new-founder-name" class="field-label">Nome</label>
+            <input id="new-founder-name" type="text" required placeholder="Ex: SKY" class="input-field" />
+          </div>
+          <div>
+            <label for="new-founder-ig" class="field-label">Link do Instagram</label>
+            <input id="new-founder-ig" type="text" placeholder="https://instagram.com/voleifalcoes" class="input-field" />
+          </div>
+          <div>
+            <label for="new-founder-photo-url" class="field-label">Foto por URL</label>
+            <input id="new-founder-photo-url" type="text" placeholder="https://..." class="input-field" />
+          </div>
+          <div>
+            <label for="new-founder-photo-file" class="field-label">Ou arquivo local da foto</label>
+            <input id="new-founder-photo-file" type="file" accept="image/*" class="input-field" style="padding: 7px;" />
+          </div>
+          <div>
+            <label for="new-founder-bio" class="field-label">Descricao</label>
+            <input id="new-founder-bio" type="text" required placeholder="Atuacao no clube" class="input-field" />
+          </div>
+          <div class="form-grid-3" style="grid-column: 1 / -1;">
+            <button type="submit" class="btn btn-primary">
+              Adicionar Lideranca
+            </button>
+          </div>
+        </form>
+
+        <div id="admin-founders-container" style="display: flex; flex-direction: column; gap: 10px;"></div>
+      </div>
+
+      <!-- e) FAQ -->
+      <div class="admin-section">
+        <h3 style="font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 12px;">
+          e) Perguntas Frequentes (FAQ)
+        </h3>
+
+        <form id="admin-add-faq-form" class="card-surface form-grid-3" style="padding: 14px; background-color: var(--bg); margin-bottom: 14px;">
+          <div>
+            <label for="new-faq-q" class="field-label">Pergunta</label>
+            <input id="new-faq-q" type="text" required placeholder="Digite a pergunta" class="input-field" />
+          </div>
+          <div>
+            <label for="new-faq-a" class="field-label">Resposta</label>
+            <input id="new-faq-a" type="text" required placeholder="Digite a resposta" class="input-field" />
+          </div>
+          <div style="display: flex; align-items: flex-end;">
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              Adicionar ao FAQ
+            </button>
+          </div>
+        </form>
+
+        <div id="admin-faq-container" style="display: flex; flex-direction: column; gap: 10px;"></div>
+      </div>
+
+      <!-- f) Backup JSON -->
+      <div style="padding-top: 20px;">
+        <h3 style="font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 8px;">
+          f) Backup e Importacao em JSON
+        </h3>
+        <label for="admin-json-textarea" class="field-label">Dados completos do site em JSON</label>
+        <textarea id="admin-json-textarea" rows="5" class="input-field" style="font-family: monospace; font-size: 12px;"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      'use strict';
+
+      var STORAGE_DATA_KEY = 'falcoes_vbc_site_v2';
+      var STORAGE_PASS_KEY = 'falcoes_vbc_pass_v2';
+      var SESSION_AUTH_KEY = 'falcoes_vbc_auth_v2';
+      var DEFAULT_PASS = 'falcoes2026';
+
+      var LOGO_URL = 'https://rblmnlycyjzoxdmhejxd.supabase.co/storage/v1/object/public/product-images/784f5e8a-790c-4ff3-9e0d-96e3e91854d5/mvp/1795357584320-nk1j1p.webp';
+      var COVER_URL = 'https://rblmnlycyjzoxdmhejxd.supabase.co/storage/v1/object/public/product-images/784f5e8a-790c-4ff3-9e0d-96e3e91854d5/mvp/1795368606135-hdv07o.webp';
+      var PHOTO_1 = 'https://rblmnlycyjzoxdmhejxd.supabase.co/storage/v1/object/public/product-images/784f5e8a-790c-4ff3-9e0d-96e3e91854d5/mvp/1795368089915-hgwu47.webp';
+      var PHOTO_2 = 'https://rblmnlycyjzoxdmhejxd.supabase.co/storage/v1/object/public/product-images/784f5e8a-790c-4ff3-9e0d-96e3e91854d5/mvp/1795368205673-vntz03.webp';
+      var PHOTO_3 = 'https://rblmnlycyjzoxdmhejxd.supabase.co/storage/v1/object/public/product-images/784f5e8a-790c-4ff3-9e0d-96e3e91854d5/mvp/1795368131630-8jukmx.webp';
+      var PHOTO_4 = 'https://rblmnlycyjzoxdmhejxd.supabase.co/storage/v1/object/public/product-images/784f5e8a-790c-4ff3-9e0d-96e3e91854d5/mvp/1795368199103-42oxh6.webp';
+
+      function createInitialData() {
+        return {
+          club: {
+            name: 'FALCOES VBC',
+            eyebrow: 'Clube Oficial, Xinguara - PA',
+            city: 'Xinguara - PA',
+            title: 'Falcoes Volei de Areia, Quadra, Evolucao e Resenha',
+            subtitle: 'Ponto de encontro oficial do @voleifalcoes em Xinguara - PA. Conheca nossa cultura na areia, confira os mantos do clube, veja o elenco no mural e faca seu cadastro para jogar com a gente.',
+            whatsapp: '5594984437081',
+            email: 'falcoesvoleibol@gmail.com',
+            instagram: 'https://instagram.com/voleifalcoes',
+            instagramHandle: '@voleifalcoes',
+            hours: 'Partidas e treinos na areia em Xinguara - PA. Atendimento direto no WhatsApp 5594984437081.',
+            logo: LOGO_URL,
+            cover: COVER_URL,
+            aboutParagraphs: [
+              'O Falcoes (@voleifalcoes) nasceu da vontade de transformar os encontros na areia em Xinguara - Para em uma experiencia organizada, acolhedora e competitiva na medida certa.',
+              'Sob os holofotes da quadra noturna, acreditamos que volei bom e aquele onde todo mundo toca na bola, aprende fundamentos, respeita o parceiro de quadra e fecha a noite na resenha leve que fortalece a amizade dentro e fora da rede.'
+            ]
+          },
+          uniforms: [
+            {
+              id: 'uni-1',
+              category: 'Titular',
+              name: 'Manto Titular',
+              price: 79.90,
+              description: 'Uniforme titular oficial do clube com corte para mobilidade na quadra de areia, tecido leve e opcao de nome e numero.',
+              image: PHOTO_1
+            },
+            {
+              id: 'uni-2',
+              category: 'Reserva',
+              name: 'Manto Reserva',
+              price: 79.90,
+              description: 'Uniforme reserva pensado para partidas sob sol forte e etapas de torneios, unindo leveza termica e contraste marcante.',
+              image: PHOTO_2
+            },
+            {
+              id: 'uni-3',
+              category: 'Treino',
+              name: 'Manto Treino',
+              price: 69.90,
+              description: 'Uniforme de treino para sessoes semanais, fundamentos na areia e resenha do grupo em Xinguara - PA.',
+              image: PHOTO_4
+            }
+          ],
+          players: [
+            {
+              id: 'pl-1',
+              name: 'SKY',
+              role: 'Oposto e Organizacao',
+              level: 'Avancado',
+              photo: PHOTO_3
+            },
+            {
+              id: 'pl-2',
+              name: 'MIKELLE',
+              role: 'Ponteira e Gestao',
+              level: 'Intermediario',
+              photo: PHOTO_4
+            },
+            {
+              id: 'pl-3',
+              name: 'Atleta Quadra 01',
+              role: 'Levantador',
+              level: 'Intermediario',
+              photo: PHOTO_1
+            },
+            {
+              id: 'pl-4',
+              name: 'Atleta Areia 02',
+              role: 'Defesa e Duplas',
+              level: 'Iniciante',
+              photo: PHOTO_2
+            }
+          ],
+          founders: [
+            {
+              id: 'fn-1',
+              role: 'FUNDADOR',
+              name: 'SKY',
+              bio: 'Fundador do FALCOES VBC em Xinguara - PA, na organizacao das partidas, treinos na areia e rotina do clube.',
+              instagram: 'https://instagram.com/voleifalcoes',
+              photo: PHOTO_3
+            },
+            {
+              id: 'fn-2',
+              role: 'COFUNDADORA',
+              name: 'MIKELLE',
+              bio: 'Cofundadora do FALCOES VBC, com destaque pela escolha do nome do time e fortalecimento da cultura do grupo.',
+              instagram: 'https://instagram.com/voleifalcoes',
+              photo: PHOTO_4
+            }
+          ],
+          steps: [
+            {
+              title: '1. Preencha sua Ficha',
+              description: 'Informe seu nome, nivel de jogo, posicao favorita e horarios disponiveis no formulario do site.'
+            },
+            {
+              title: '2. Alinhamento no WhatsApp',
+              description: 'Nossa organizacao recebe sua ficha no 5594984437081, tira duvidas e orienta sua participacao.'
+            },
+            {
+              title: '3. Jogos e Treinos na Areia',
+              description: 'Participe dos encontros com divisao equilibrada de times, evolucao tecnica e resenha.'
+            },
+            {
+              title: '4. Manto e Torneios',
+              description: 'Garanta seu uniforme personalizado do clube e acompanhe os jogos e torneios em Xinguara - PA.'
+            }
+          ],
+          rules: [
+            {
+              title: 'Respeito Acima de Qualquer Placar',
+              description: 'Incentivo e orientacao construtiva sao bem-vindos; desrespeito, reclamacao agressiva ou estrelismo nao fazem parte do clube.'
+            },
+            {
+              title: 'Compromisso com a Lista de Presenca',
+              description: 'Confirmou o nome na lista do dia? Se surgir imprevisto, avise antes para liberarmos a vaga e mantermos os times fechados.'
+            },
+            {
+              title: 'Acolhimento a Todos os Niveis',
+              description: 'Quem ja joga ajuda quem esta pegando o ritmo da areia. O objetivo e evoluir o nivel geral da galera junto.'
+            },
+            {
+              title: 'Zelo pela Quadra e Materiais',
+              description: 'Cuidar das bolas, rede, marcacoes e deixar a area da arena sempre limpa apos os jogos e a resenha.'
+            }
+          ],
+          faqs: [
+            {
+              question: 'Como entro para jogar no FALCOES VBC em Xinguara - PA',
+              answer: 'Preencha a ficha de cadastro nesta pagina e envie pelo WhatsApp 5594984437081 para alinhar dias e vagas.'
+            },
+            {
+              question: 'Preciso ter dupla formada para participar',
+              answer: 'Nao. Os times sao montados conforme a lista do dia, nivel de jogo e formato da partida.'
+            },
+            {
+              question: 'Como faco a encomenda dos uniformes oficiais',
+              answer: 'Escolha o tamanho no uniforme desejado, adicione a sacola e clique em Enviar Sacola no WhatsApp 5594984437081.'
+            }
+          ],
+          registrations: []
+        };
+      }
+
+      function loadSiteData() {
+        try {
+          var raw = localStorage.getItem(STORAGE_DATA_KEY);
+          if (!raw) return createInitialData();
+          var parsed = JSON.parse(raw);
+          var def = createInitialData();
+          return {
+            club: Object.assign({}, def.club, parsed.club || {}),
+            uniforms: Array.isArray(parsed.uniforms) && parsed.uniforms.length > 0 ? parsed.uniforms.slice(0, 3) : def.uniforms,
+            players: Array.isArray(parsed.players) ? parsed.players : def.players,
+            founders: Array.isArray(parsed.founders) ? parsed.founders : def.founders,
+            steps: Array.isArray(parsed.steps) && parsed.steps.length > 0 ? parsed.steps : def.steps,
+            rules: Array.isArray(parsed.rules) && parsed.rules.length > 0 ? parsed.rules : def.rules,
+            faqs: Array.isArray(parsed.faqs) ? parsed.faqs : def.faqs,
+            registrations: Array.isArray(parsed.registrations) ? parsed.registrations : []
+          };
+        } catch (e) {
+          return createInitialData();
+        }
+      }
+
+      var state = loadSiteData();
+      var bag = [];
+      var draftNewPlayerPhoto = '';
+      var draftNewFounderPhoto = '';
+
+      function saveSiteData() {
+        try {
+          localStorage.setItem(STORAGE_DATA_KEY, JSON.stringify(state));
+        } catch (e) {
+          showToast('Nao foi possivel salvar as alteracoes no armazenamento local.');
+        }
+      }
+
+      function getAdminPassword() {
+        try {
+          return localStorage.getItem(STORAGE_PASS_KEY) || DEFAULT_PASS;
+        } catch (e) {
+          return DEFAULT_PASS;
+        }
+      }
+
+      function setAdminPassword(pass) {
+        try {
+          localStorage.setItem(STORAGE_PASS_KEY, pass);
+        } catch (e) {
+          // Ignora falha de armazenamento
+        }
+      }
+
+      function isAuthenticated() {
+        try {
+          return sessionStorage.getItem(SESSION_AUTH_KEY) === 'true';
+        } catch (e) {
+          return false;
+        }
+      }
+
+      function setAuthenticated(val) {
+        try {
+          if (val) {
+            sessionStorage.setItem(SESSION_AUTH_KEY, 'true');
+          } else {
+            sessionStorage.removeItem(SESSION_AUTH_KEY);
+          }
+        } catch (e) {
+          // Ignora falha de sessao
+        }
+      }
+
+      // Aviso visual sem alert()
+      var toastEl = document.getElementById('toast');
+      var toastMsgEl = document.getElementById('toast-message');
+      var toastCloseBtn = document.getElementById('btn-close-toast');
+      var toastTimeout = null;
+
+      function showToast(msg) {
+        if (!toastEl || !toastMsgEl) return;
+        toastMsgEl.textContent = msg;
+        toastEl.classList.add('is-visible');
+        if (toastTimeout) clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(function () {
+          toastEl.classList.remove('is-visible');
+        }, 3600);
+      }
+
+      if (toastCloseBtn && toastEl) {
+        toastCloseBtn.addEventListener('click', function () {
+          toastEl.classList.remove('is-visible');
+        });
+      }
+
+      function escapeHtml(str) {
+        return String(str || '')
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;');
+      }
+
+      function formatBrl(num) {
+        var val = Number(num);
+        if (isNaN(val)) val = 0;
+        return val.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+      }
+
+      function getCleanWhatsapp() {
+        var digits = String(state.club.whatsapp || '5594984437081').replace(/\D/g, '');
+        return digits || '5594984437081';
+      }
+
+      function copyToClipboard(text, successMsg) {
+        var copied = false;
+        try {
+          var area = document.createElement('textarea');
+          area.value = text;
+          area.setAttribute('readonly', '');
+          area.style.position = 'absolute';
+          area.style.left = '-9999px';
+          document.body.appendChild(area);
+          area.select();
+          copied = document.execCommand('copy');
+          document.body.removeChild(area);
+        } catch (e) {
+          copied = false;
+        }
+        showToast(copied ? successMsg : 'Selecione o texto para copiar manualmente.');
+      }
+
+      // Renderizacao geral do site
+      function renderAll() {
+        var c = state.club;
+        var wa = getCleanWhatsapp();
+        var waUrl = 'https://wa.me/' + wa;
+
+        document.title = (c.name || 'FALCOES VBC') + ', Clube Oficial, ' + (c.city || 'Xinguara - PA');
+
+        var setText = function (id, txt) {
+          var el = document.getElementById(id);
+          if (el) el.textContent = txt || '';
+        };
+        var setSrc = function (id, src) {
+          var el = document.getElementById(id);
+          if (el && src) el.src = src;
+        };
+        var setHref = function (id, href) {
+          var el = document.getElementById(id);
+          if (el && href) el.href = href;
+        };
+
+        setSrc('ui-header-logo', c.logo || LOGO_URL);
+        setSrc('ui-hero-cover', c.cover || COVER_URL);
+        setText('ui-header-sub', 'Clube Oficial, ' + c.city);
+        setText('ui-header-name', c.name);
+        setText('ui-hero-eyebrow', 'Clube Oficial, ' + c.city + ', ' + (c.instagramHandle || '@voleifalcoes'));
+        setText('ui-hero-title', c.title);
+        setText('ui-hero-subtitle', c.subtitle);
+        setText('ui-hours-text', c.hours);
+        setText('ui-contact-mini', 'E-mail: ' + c.email);
+        setText('ui-contact-details', 'WhatsApp e telefone: ' + wa + ' | E-mail: ' + c.email + ' | Instagram: ' + (c.instagramHandle || '@voleifalcoes'));
+        setText('ui-contact-city', c.city);
+        setHref('ui-contact-wa-btn', waUrl);
+        setText('ui-contact-wa-btn', 'Falar no WhatsApp ' + wa);
+        setText('ui-footer-brand', c.name);
+        setText('ui-footer-phone', wa);
+        setText('ui-footer-email', c.email);
+        setHref('ui-footer-ig', c.instagram);
+        setHref('ui-footer-wa', waUrl);
+
+        var aboutEl = document.getElementById('about-paragraphs');
+        if (aboutEl) {
+          aboutEl.innerHTML = (c.aboutParagraphs || [])
+            .map(function (p) {
+              return '<p>' + escapeHtml(p) + '</p>';
+            })
+            .join('');
+        }
+
+        renderUniformsSection(waUrl);
+        renderBagSection(waUrl);
+        renderPlayersSection();
+        renderFoundersSection();
+        renderStepsAndRulesSection();
+        renderFaqSection();
+        refreshRegistrationPreview();
+
+        var jsonArea = document.getElementById('admin-json-textarea');
+        if (jsonArea) {
+          jsonArea.value = JSON.stringify(state, null, 2);
+        }
+      }
+
+      // Uniformes (ate 3)
+      function renderUniformsSection(waUrl) {
+        var grid = document.getElementById('uniforms-grid');
+        if (!grid) return;
+
+        grid.innerHTML = state.uniforms
+          .slice(0, 3)
+          .map(function (u, idx) {
+            return (
+              '<article class="card-surface uniform-card">' +
+              '  <div>' +
+              '    <div class="uniform-img-wrap">' +
+              '      <img src="' + escapeHtml(u.image || LOGO_URL) + '" alt="' + escapeHtml(u.name) + ' do ' + escapeHtml(state.club.name) + '" class="uniform-img" onerror="this.onerror=null;this.src=\'' + LOGO_URL + '\';" />' +
+              '    </div>' +
+              '    <div class="uniform-body">' +
+              '      <div class="uniform-top-row">' +
+              '        <span class="badge-tag">' + escapeHtml(u.category || 'Oficial') + '</span>' +
+              '        <strong style="font-family: var(--hf); font-size: 16px; color: var(--text);">' + formatBrl(u.price) + '</strong>' +
+              '      </div>' +
+              '      <h3 style="font-size: 20px; font-weight: 700; color: var(--text);">' + escapeHtml(u.name) + '</h3>' +
+              '      <p style="font-size: 13px; color: var(--primary);">' + escapeHtml(u.description) + '</p>' +
+              '      <div style="margin-top: 4px;">' +
+              '        <label for="uni-size-' + idx + '" class="field-label">Tamanho</label>' +
+              '        <select id="uni-size-' + idx + '" class="input-field" style="padding: 8px 10px; font-size: 13px;">' +
+              '          <option value="PP">PP</option>' +
+              '          <option value="P">P</option>' +
+              '          <option value="M" selected>M</option>' +
+              '          <option value="G">G</option>' +
+              '          <option value="GG">GG</option>' +
+              '        </select>' +
+              '      </div>' +
+              '    </div>' +
+              '  </div>' +
+              '  <div class="uniform-footer">' +
+              '    <button type="button" data-add-bag="' + idx + '" class="btn btn-primary" style="width: 100%;">Adicionar a Sacola</button>' +
+              '    <button type="button" data-direct-wa="' + idx + '" class="btn btn-secondary" style="width: 100%;">Pedir no WhatsApp</button>' +
+              '  </div>' +
+              '</article>'
+            );
+          })
+          .join('');
+
+        grid.querySelectorAll('[data-add-bag]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var idx = Number(btn.getAttribute('data-add-bag'));
+            var item = state.uniforms[idx];
+            if (!item) return;
+            var sizeEl = document.getElementById('uni-size-' + idx);
+            var size = sizeEl ? sizeEl.value : 'M';
+            bag.push({
+              id: item.id,
+              name: item.name,
+              category: item.category,
+              price: Number(item.price) || 0,
+              size: size
+            });
+            renderBagSection(waUrl);
+            showToast(item.name + ' (' + size + ') adicionado na sacola.');
+          });
+        });
+
+        grid.querySelectorAll('[data-direct-wa]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var idx = Number(btn.getAttribute('data-direct-wa'));
+            var item = state.uniforms[idx];
+            if (!item) return;
+            var sizeEl = document.getElementById('uni-size-' + idx);
+            var size = sizeEl ? sizeEl.value : 'M';
+            var customEl = document.getElementById('bag-custom-name');
+            var customTxt = customEl ? customEl.value.trim() : '';
+
+            var msg = [
+              'Encomenda de Uniforme, ' + state.club.name + ' (' + state.club.city + ')',
+              'Modelo: ' + item.name + ' (' + item.category + ')',
+              'Tamanho: ' + size,
+              'Valor unitario: ' + formatBrl(item.price),
+              'Estampa (nome/numero): ' + (customTxt || 'Sem estampa extra')
+            ].join('\n');
+
+            showToast('Abrindo WhatsApp para encomendar ' + item.name + '.');
+            window.open(waUrl + '?text=' + encodeURIComponent(msg), '_blank', 'noopener,noreferrer');
+          });
+        });
+      }
+
+      function renderBagSection(waUrl) {
+        var listEl = document.getElementById('bag-items-list');
+        var countEl = document.getElementById('bag-count');
+        var totalEl = document.getElementById('bag-total');
+
+        var total = bag.reduce(function (sum, it) {
+          return sum + (Number(it.price) || 0);
+        }, 0);
+
+        if (countEl) countEl.textContent = String(bag.length);
+        if (totalEl) totalEl.textContent = formatBrl(total);
+
+        if (!listEl) return;
+        if (bag.length === 0) {
+          listEl.innerHTML = '<p>Nenhum uniforme adicionado na sacola ainda.</p>';
+          return;
+        }
+
+        listEl.innerHTML = bag
+          .map(function (it, i) {
+            return (
+              '<div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; background-color: var(--bg); border: 1px solid var(--border-subtle); border-radius: var(--radius); padding: 8px 12px;">' +
+              '  <span><strong style="color: var(--text);">' + escapeHtml(it.name) + '</strong> | Tam: ' + escapeHtml(it.size) + ' | ' + formatBrl(it.price) + '</span>' +
+              '  <button type="button" data-remove-bag="' + i + '" class="btn btn-danger" style="min-height: 30px; padding: 4px 10px; font-size: 11px;">Remover</button>' +
+              '</div>'
+            );
+          })
+          .join('');
+
+        listEl.querySelectorAll('[data-remove-bag]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var idx = Number(btn.getAttribute('data-remove-bag'));
+            bag.splice(idx, 1);
+            renderBagSection(waUrl);
+            showToast('Item removido da sacola.');
+          });
+        });
+      }
+
+      var sendBagBtn = document.getElementById('btn-send-bag-wa');
+      var clearBagBtn = document.getElementById('btn-clear-bag');
+
+      if (sendBagBtn) {
+        sendBagBtn.addEventListener('click', function () {
+          if (bag.length === 0) {
+            showToast('Adicione pelo menos um uniforme na sacola antes de enviar.');
+            return;
+          }
+          var customEl = document.getElementById('bag-custom-name');
+          var customTxt = customEl ? customEl.value.trim() : '';
+          var total = bag.reduce(function (sum, it) {
+            return sum + (Number(it.price) || 0);
+          }, 0);
+
+          var lines = [
+            'Pedido da Sacola, ' + state.club.name + ' (' + state.club.city + ')'
+          ];
+          bag.forEach(function (it, idx) {
+            lines.push((idx + 1) + '. ' + it.name + ' (' + it.category + ') - Tam: ' + it.size + ' - ' + formatBrl(it.price));
+          });
+          lines.push('Total: ' + formatBrl(total));
+          if (customTxt) {
+            lines.push('Nome e numero nas costas: ' + customTxt);
+          }
+
+          var url = 'https://wa.me/' + getCleanWhatsapp() + '?text=' + encodeURIComponent(lines.join('\n'));
+          showToast('Enviando pedido da sacola para o WhatsApp.');
+          window.open(url, '_blank', 'noopener,noreferrer');
+        });
+      }
+
+      if (clearBagBtn) {
+        clearBagBtn.addEventListener('click', function () {
+          bag = [];
+          renderBagSection('https://wa.me/' + getCleanWhatsapp());
+          showToast('Sacola limpa.');
+        });
+      }
+
+      // Mural de jogadores
+      var muralSearchEl = document.getElementById('mural-search');
+      var muralLevelEl = document.getElementById('mural-level-filter');
+
+      function renderPlayersSection() {
+        var grid = document.getElementById('players-grid');
+        if (!grid) return;
+
+        var term = muralSearchEl ? muralSearchEl.value.trim().toLowerCase() : '';
+        var level = muralLevelEl ? muralLevelEl.value : 'Todos';
+
+        var list = state.players.filter(function (p) {
+          var matchLevel = level === 'Todos' || p.level === level;
+          var matchTerm =
+            !term ||
+            String(p.name || '').toLowerCase().indexOf(term) !== -1 ||
+            String(p.role || '').toLowerCase().indexOf(term) !== -1;
+          return matchLevel && matchTerm;
+        });
+
+        if (list.length === 0) {
+          grid.innerHTML = '<div class="card-surface" style="padding: 18px; font-size: 14px; color: var(--primary); grid-column: 1 / -1;">Nenhum jogador encontrado com esse filtro.</div>';
+          return;
+        }
+
+        grid.innerHTML = list
+          .map(function (p) {
+            return (
+              '<article class="card-surface player-card">' +
+              '  <img src="' + escapeHtml(p.photo || LOGO_URL) + '" alt="Foto de ' + escapeHtml(p.name) + '" class="player-avatar" onerror="this.onerror=null;this.src=\'' + LOGO_URL + '\';" />' +
+              '  <div style="min-width: 0;">' +
+              '    <h3 style="font-size: 16px; font-weight: 700; color: var(--text);">' + escapeHtml(p.name) + '</h3>' +
+              '    <p style="font-size: 13px; color: var(--primary); margin-top: 2px;">' + escapeHtml(p.role) + '</p>' +
+              '    <span class="badge-tag" style="margin-top: 6px;">' + escapeHtml(p.level) + '</span>' +
+              '  </div>' +
+              '</article>'
+            );
+          })
+          .join('');
+      }
+
+      if (muralSearchEl) muralSearchEl.addEventListener('input', renderPlayersSection);
+      if (muralLevelEl) muralLevelEl.addEventListener('change', renderPlayersSection);
+
+      // Fundadores e lideranca
+      function renderFoundersSection() {
+        var grid = document.getElementById('founders-grid');
+        if (!grid) return;
+
+        if (state.founders.length === 0) {
+          grid.innerHTML = '<div class="card-surface" style="padding: 18px; font-size: 14px; color: var(--primary); grid-column: 1 / -1;">Nenhuma lideranca cadastrada.</div>';
+          return;
+        }
+
+        grid.innerHTML = state.founders
+          .map(function (f) {
+            var ig = f.instagram || state.club.instagram || 'https://instagram.com/voleifalcoes';
+            return (
+              '<article class="card-surface founder-card">' +
+              '  <img src="' + escapeHtml(f.photo || LOGO_URL) + '" alt="' + escapeHtml(f.name) + ', ' + escapeHtml(f.role) + '" class="founder-photo" onerror="this.onerror=null;this.src=\'' + LOGO_URL + '\';" />' +
+              '  <div style="display: flex; flex-direction: column; gap: 6px; min-width: 0; flex: 1;">' +
+              '    <span class="badge-tag" style="align-self: flex-start;">' + escapeHtml(f.role) + '</span>' +
+              '    <h3 style="font-size: 21px; font-weight: 700; color: var(--text);">' + escapeHtml(f.name) + '</h3>' +
+              '    <p style="font-size: 14px; color: var(--primary);">' + escapeHtml(f.bio) + '</p>' +
+              '    <div style="margin-top: 4px;">' +
+              '      <a href="' + escapeHtml(ig) + '" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="min-height: 36px; padding: 6px 14px; font-size: 12px;">Instagram</a>' +
+              '    </div>' +
+              '  </div>' +
+              '</article>'
+            );
+          })
+          .join('');
+      }
+
+      // Passos e regras
+      function renderStepsAndRulesSection() {
+        var stepsEl = document.getElementById('steps-container');
+        var rulesEl = document.getElementById('rules-container');
+
+        if (stepsEl) {
+          stepsEl.innerHTML = state.steps
+            .map(function (s) {
+              return (
+                '<li class="step-item">' +
+                '  <h3 style="font-size: 16px; font-weight: 700; color: var(--text);">' + escapeHtml(s.title) + '</h3>' +
+                '  <p style="font-size: 13px; color: var(--primary); margin-top: 4px;">' + escapeHtml(s.description) + '</p>' +
+                '</li>'
+              );
+            })
+            .join('');
+        }
+
+        if (rulesEl) {
+          rulesEl.innerHTML = state.rules
+            .map(function (r, idx) {
+              return (
+                '<li class="step-item">' +
+                '  <h3 style="font-size: 16px; font-weight: 700; color: var(--text);">' + (idx + 1) + '. ' + escapeHtml(r.title) + '</h3>' +
+                '  <p style="font-size: 13px; color: var(--primary); margin-top: 4px;">' + escapeHtml(r.description) + '</p>' +
+                '</li>'
+              );
+            })
+            .join('');
+        }
+      }
+
+      // FAQ interativo
+      function renderFaqSection() {
+        var wrap = document.getElementById('faq-container');
+        if (!wrap) return;
+
+        wrap.innerHTML = state.faqs
+          .map(function (item, idx) {
+            return (
+              '<div class="faq-item">' +
+              '  <button type="button" class="faq-trigger" data-faq-btn="' + idx + '" aria-expanded="false">' +
+              '    <span>' + escapeHtml(item.question) + '</span>' +
+              '    <span style="font-size: 12px; color: var(--primary); flex-shrink: 0;">Abrir</span>' +
+              '  </button>' +
+              '  <div id="faq-body-' + idx + '" class="faq-panel" style="display: none;">' +
+              escapeHtml(item.answer) +
+              '  </div>' +
+              '</div>'
+            );
+          })
+          .join('');
+
+        wrap.querySelectorAll('[data-faq-btn]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var idx = btn.getAttribute('data-faq-btn');
+            var panel = document.getElementById('faq-body-' + idx);
+            if (!panel) return;
+            var open = panel.style.display === 'block';
+            panel.style.display = open ? 'none' : 'block';
+            btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+            var indicator = btn.lastElementChild;
+            if (indicator) indicator.textContent = open ? 'Abrir' : 'Fechar';
+          });
+        });
+      }
+
+      // Ficha de cadastro de atletas
+      var regForm = document.getElementById('registration-form');
+      var regName = document.getElementById('reg-name');
+      var regPhone = document.getElementById('reg-phone');
+      var regRole = document.getElementById('reg-role');
+      var regLevel = document.getElementById('reg-level');
+      var regSchedule = document.getElementById('reg-schedule');
+      var regNotes = document.getElementById('reg-notes');
+      var regPreview = document.getElementById('reg-preview');
+      var regWaLink = document.getElementById('reg-wa-link');
+      var regHistoryList = document.getElementById('reg-history-list');
+
+      function buildRegistrationMessage() {
+        var lines = [
+          'Ficha de Cadastro ' + state.club.name + ' (' + state.club.city + ')',
+          'Nome ou apelido: ' + ((regName && regName.value.trim()) || 'A preencher'),
+          'WhatsApp: ' + ((regPhone && regPhone.value.trim()) || 'A preencher'),
+          'Modalidade ou posicao: ' + ((regRole && regRole.value) || 'Oposto'),
+          'Nivel: ' + ((regLevel && regLevel.value) || 'Intermediario'),
+          'Dias e horarios: ' + ((regSchedule && regSchedule.value.trim()) || 'A preencher')
+        ];
+        if (regNotes && regNotes.value.trim()) {
+          lines.push('Observacoes: ' + regNotes.value.trim());
+        }
+        return lines.join('\n');
+      }
+
+      function renderRegistrationHistory() {
+        if (!regHistoryList) return;
+        if (!state.registrations || state.registrations.length === 0) {
+          regHistoryList.innerHTML = '<p>Nenhuma ficha salva ainda.</p>';
+          return;
+        }
+        regHistoryList.innerHTML = state.registrations
+          .slice(0, 5)
+          .map(function (r) {
+            return (
+              '<div style="background-color: var(--bg); border: 1px solid var(--border-subtle); border-radius: var(--radius); padding: 8px 10px;">' +
+              '  <strong style="color: var(--text);">' + escapeHtml(r.name) + '</strong> (' + escapeHtml(r.level) + ', ' + escapeHtml(r.role) + ') - ' + escapeHtml(r.phone) +
+              '</div>'
+            );
+          })
+          .join('');
+      }
+
+      function refreshRegistrationPreview() {
+        var msg = buildRegistrationMessage();
+        var href = 'https://wa.me/' + getCleanWhatsapp() + '?text=' + encodeURIComponent(msg);
+        if (regPreview) regPreview.textContent = msg;
+        if (regWaLink) {
+          regWaLink.href = href;
+          regWaLink.textContent = 'Abrir WhatsApp ' + getCleanWhatsapp();
+        }
+        renderRegistrationHistory();
+        return href;
+      }
+
+      [regName, regPhone, regRole, regLevel, regSchedule, regNotes].forEach(function (el) {
+        if (el) {
+          el.addEventListener('input', refreshRegistrationPreview);
+          el.addEventListener('change', refreshRegistrationPreview);
+        }
+      });
+
+      if (regForm) {
+        regForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var nVal = regName ? regName.value.trim() : '';
+          var pVal = regPhone ? regPhone.value.trim() : '';
+          var sVal = regSchedule ? regSchedule.value.trim() : '';
+
+          if (!nVal) {
+            showToast('Informe seu nome ou apelido.');
+            if (regName) regName.focus();
+            return;
+          }
+          if (!pVal) {
+            showToast('Informe seu WhatsApp.');
+            if (regPhone) regPhone.focus();
+            return;
+          }
+          if (!sVal) {
+            showToast('Informe seus dias e horarios disponiveis.');
+            if (regSchedule) regSchedule.focus();
+            return;
+          }
+
+          var href = refreshRegistrationPreview();
+          state.registrations.unshift({
+            name: nVal,
+            phone: pVal,
+            role: regRole ? regRole.value : 'Oposto',
+            level: regLevel ? regLevel.value : 'Intermediario',
+            schedule: sVal,
+            notes: regNotes ? regNotes.value.trim() : ''
+          });
+          saveSiteData();
+          renderRegistrationHistory();
+          showToast('Ficha pronta. Abrindo WhatsApp 5594984437081.');
+          window.open(href, '_blank', 'noopener,noreferrer');
+        });
+      }
+
+      var copyRegBtn = document.getElementById('btn-copy-reg');
+      var resetRegBtn = document.getElementById('btn-reset-reg');
+
+      if (copyRegBtn) {
+        copyRegBtn.addEventListener('click', function () {
+          copyToClipboard(buildRegistrationMessage(), 'Ficha pronta copiada.');
+        });
+      }
+
+      if (resetRegBtn) {
+        resetRegBtn.addEventListener('click', function () {
+          if (regName) regName.value = '';
+          if (regPhone) regPhone.value = '';
+          if (regSchedule) regSchedule.value = '';
+          if (regNotes) regNotes.value = '';
+          refreshRegistrationPreview();
+          showToast('Campos da ficha limpos.');
+        });
+      }
+
+      // Login e Painel de Edicao
+      var loginModal = document.getElementById('login-modal');
+      var adminModal = document.getElementById('admin-modal');
+      var loginForm = document.getElementById('login-form');
+      var loginPassInput = document.getElementById('login-password');
+      var closeLoginBtn = document.getElementById('btn-close-login');
+      var closeAdminBtn = document.getElementById('btn-close-admin');
+      var logoutAdminBtn = document.getElementById('btn-logout-admin');
+
+      function requestAdminAccess() {
+        if (isAuthenticated()) {
+          fillAdminPanel();
+          if (adminModal) adminModal.classList.add('is-open');
+        } else {
+          if (loginModal) loginModal.classList.add('is-open');
+          if (loginPassInput) {
+            loginPassInput.value = '';
+            loginPassInput.focus();
+          }
+        }
+      }
+
+      [
+        'btn-open-admin-top',
+        'btn-open-admin-footer',
+        'btn-edit-uniforms',
+        'btn-edit-players',
+        'btn-edit-founders',
+        'btn-edit-faq'
+      ].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) el.addEventListener('click', requestAdminAccess);
+      });
+
+      if (closeLoginBtn && loginModal) {
+        closeLoginBtn.addEventListener('click', function () {
+          loginModal.classList.remove('is-open');
+        });
+      }
+
+      if (loginForm) {
+        loginForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var typed = loginPassInput ? loginPassInput.value : '';
+          if (typed === getAdminPassword()) {
+            setAuthenticated(true);
+            if (loginModal) loginModal.classList.remove('is-open');
+            fillAdminPanel();
+            if (adminModal) adminModal.classList.add('is-open');
+            showToast('Acesso liberado ao Painel de Edicao.');
+          } else {
+            showToast('Senha incorreta.');
+          }
+        });
+      }
+
+      if (closeAdminBtn && adminModal) {
+        closeAdminBtn.addEventListener('click', function () {
+          adminModal.classList.remove('is-open');
+        });
+      }
+
+      if (logoutAdminBtn && adminModal) {
+        logoutAdminBtn.addEventListener('click', function () {
+          setAuthenticated(false);
+          adminModal.classList.remove('is-open');
+          showToast('Sessao encerrada.');
+        });
+      }
+
+      function fillAdminPanel() {
+        var c = state.club;
+        var setVal = function (id, v) {
+          var el = document.getElementById(id);
+          if (el) el.value = v || '';
+        };
+        setVal('adm-title', c.title);
+        setVal('adm-city', c.city);
+        setVal('adm-whatsapp', c.whatsapp);
+        setVal('adm-email', c.email);
+        setVal('adm-instagram', c.instagram);
+        setVal('adm-new-password', '');
+        setVal('adm-subtitle', c.subtitle);
+        setVal('adm-hours', c.hours);
+        setVal('adm-about', (c.aboutParagraphs || []).join('\n\n'));
+
+        renderAdminUniforms();
+        renderAdminPlayers();
+        renderAdminFounders();
+        renderAdminFaqs();
+      }
+
+      // Salvar dados gerais
+      var saveGeneralBtn = document.getElementById('btn-save-general');
+      if (saveGeneralBtn) {
+        saveGeneralBtn.addEventListener('click', function () {
+          var getVal = function (id) {
+            var el = document.getElementById(id);
+            return el ? el.value : '';
+          };
+
+          var titleVal = getVal('adm-title').trim();
+          var cityVal = getVal('adm-city').trim();
+          var waVal = getVal('adm-whatsapp').replace(/\D/g, '');
+          var emailVal = getVal('adm-email').trim();
+          var igVal = getVal('adm-instagram').trim();
+          var newPassVal = getVal('adm-new-password');
+          var subVal = getVal('adm-subtitle').trim();
+          var hoursVal = getVal('adm-hours').trim();
+          var aboutRaw = getVal('adm-about');
+
+          if (titleVal) state.club.title = titleVal;
+          if (cityVal) {
+            state.club.city = cityVal;
+            state.club.eyebrow = 'Clube Oficial, ' + cityVal;
+          }
+          if (waVal) state.club.whatsapp = waVal;
+          if (emailVal) state.club.email = emailVal;
+          if (igVal) state.club.instagram = igVal;
+          if (subVal) state.club.subtitle = subVal;
+          if (hoursVal) state.club.hours = hoursVal;
+
+          var paras = aboutRaw
+            .split(/\n\s*\n/)
+            .map(function (item) {
+              return item.trim();
+            })
+            .filter(Boolean);
+          if (paras.length > 0) {
+            state.club.aboutParagraphs = paras;
+          }
+
+          if (newPassVal) {
+            setAdminPassword(newPassVal);
+            var passField = document.getElementById('adm-new-password');
+            if (passField) passField.value = '';
+          }
+
+          saveSiteData();
+          renderAll();
+          showToast('Dados gerais salvos.');
+        });
+      }
+
+      // Gerenciar ate 3 uniformes no painel
+      function renderAdminUniforms() {
+        var wrap = document.getElementById('admin-uniforms-container');
+        if (!wrap) return;
+
+        wrap.innerHTML = state.uniforms
+          .slice(0, 3)
+          .map(function (u, idx) {
+            return (
+              '<div class="card-surface" style="padding: 14px; background-color: var(--bg); display: flex; flex-direction: column; gap: 10px;">' +
+              '  <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">' +
+              '    <strong style="font-family: var(--hf); font-size: 13px; color: var(--primary);">Uniforme ' + (idx + 1) + '</strong>' +
+              (state.uniforms.length > 1
+                ? '<button type="button" data-adm-del-u="' + idx + '" class="btn btn-danger" style="min-height: 28px; padding: 3px 8px; font-size: 11px;">Remover</button>'
+                : '') +
+              '  </div>' +
+              '  <div>' +
+              '    <label class="field-label">Nome</label>' +
+              '    <input type="text" data-adm-u-name="' + idx + '" value="' + escapeHtml(u.name) + '" class="input-field" style="padding: 7px 10px; font-size: 13px;" />' +
+              '  </div>' +
+              '  <div class="form-grid-2">' +
+              '    <div>' +
+              '      <label class="field-label">Categoria</label>' +
+              '      <input type="text" data-adm-u-cat="' + idx + '" value="' + escapeHtml(u.category) + '" class="input-field" style="padding: 7px 10px; font-size: 13px;" />' +
+              '    </div>' +
+              '    <div>' +
+              '      <label class="field-label">Preco (R$)</label>' +
+              '      <input type="number" step="0.1" data-adm-u-price="' + idx + '" value="' + escapeHtml(u.price) + '" class="input-field" style="padding: 7px 10px; font-size: 13px;" />' +
+              '    </div>' +
+              '  </div>' +
+              '  <div>' +
+              '    <label class="field-label">Foto (URL ou Data URL)</label>' +
+              '    <input type="text" data-adm-u-img="' + idx + '" value="' + escapeHtml(u.image) + '" class="input-field" style="padding: 7px 10px; font-size: 13px;" />' +
+              '  </div>' +
+              '  <div>' +
+              '    <label class="field-label">Upload de foto local</label>' +
+              '    <input type="file" accept="image/*" data-adm-u-file="' + idx + '" class="input-field" style="padding: 6px; font-size: 12px;" />' +
+              '  </div>' +
+              '  <div>' +
+              '    <label class="field-label">Descricao</label>' +
+              '    <textarea rows="2" data-adm-u-desc="' + idx + '" class="input-field" style="padding: 7px 10px; font-size: 13px;">' + escapeHtml(u.description) + '</textarea>' +
+              '  </div>' +
+              '  <button type="button" data-adm-save-u="' + idx + '" class="btn btn-primary" style="width: 100%;">Salvar Uniforme ' + (idx + 1) + '</button>' +
+              '</div>'
+            );
+          })
+          .join('');
+
+        wrap.querySelectorAll('[data-adm-u-file]').forEach(function (inp) {
+          inp.addEventListener('change', function () {
+            var idx = Number(inp.getAttribute('data-adm-u-file'));
+            var file = inp.files && inp.files[0];
+            if (!file) return;
+            var reader = new FileReader();
+            reader.onload = function () {
+              var target = wrap.querySelector('[data-adm-u-img="' + idx + '"]');
+              if (target && typeof reader.result === 'string') {
+                target.value = reader.result;
+                showToast('Foto carregada no Uniforme ' + (idx + 1) + '. Clique em Salvar Uniforme.');
+              }
+            };
+            reader.readAsDataURL(file);
+          });
+        });
+
+        wrap.querySelectorAll('[data-adm-save-u]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var idx = Number(btn.getAttribute('data-adm-save-u'));
+            var cur = state.uniforms[idx];
+            if (!cur) return;
+
+            var nEl = wrap.querySelector('[data-adm-u-name="' + idx + '"]');
+            var cEl = wrap.querySelector('[data-adm-u-cat="' + idx + '"]');
+            var pEl = wrap.querySelector('[data-adm-u-price="' + idx + '"]');
+            var iEl = wrap.querySelector('[data-adm-u-img="' + idx + '"]');
+            var dEl = wrap.querySelector('[data-adm-u-desc="' + idx + '"]');
+
+            state.uniforms[idx] = Object.assign({}, cur, {
+              name: (nEl && nEl.value.trim()) || cur.name,
+              category: (cEl && cEl.value.trim()) || cur.category,
+              price: pEl ? Number(pEl.value) || 0 : cur.price,
+              image: (iEl && iEl.value.trim()) || cur.image,
+              description: (dEl && dEl.value.trim()) || cur.description
+            });
+
+            saveSiteData();
+            renderAll();
+            showToast('Uniforme ' + (idx + 1) + ' atualizado.');
+          });
+        });
+
+        wrap.querySelectorAll('[data-adm-del-u]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var idx = Number(btn.getAttribute('data-adm-del-u'));
+            if (state.uniforms.length <= 1) {
+              showToast('Mantenha pelo menos 1 uniforme.');
+              return;
+            }
+            state.uniforms.splice(idx, 1);
+            saveSiteData();
+            renderAll();
+            renderAdminUniforms();
+            showToast('Uniforme removido.');
+          });
+        });
+      }
+
+      var addUniformBtn = document.getElementById('btn-add-uniform');
+      if (addUniformBtn) {
+        addUniformBtn.addEventListener('click', function () {
+          if (state.uniforms.length >= 3) {
+            showToast('O limite e de ate 3 uniformes.');
+            return;
+          }
+          var nextNum = state.uniforms.length + 1;
+          state.uniforms.push({
+            id: 'uni-' + Date.now(),
+            category: 'Especial',
+            name: 'Manto ' + nextNum,
+            price: 79.90,
+            description: 'Uniforme oficial do FALCOES VBC em Xinguara - PA.',
+            image: PHOTO_1
+          });
+          saveSiteData();
+          renderAll();
+          renderAdminUniforms();
+          showToast('Uniforme adicionado.');
+        });
+      }
+
+      // Mural de jogadores no painel
+      var newPlayerFileEl = document.getElementById('new-player-photo-file');
+      if (newPlayerFileEl) {
+        newPlayerFileEl.addEventListener('change', function () {
+          var f = newPlayerFileEl.files && newPlayerFileEl.files[0];
+          if (!f) return;
+          var r = new FileReader();
+          r.onload = function () {
+            if (typeof r.result === 'string') {
+              draftNewPlayerPhoto = r.result;
+              showToast('Foto local do jogador carregada.');
+            }
+          };
+          r.readAsDataURL(f);
+        });
+      }
+
+      var addPlayerForm = document.getElementById('admin-add-player-form');
+      if (addPlayerForm) {
+        addPlayerForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var nVal = document.getElementById('new-player-name').value.trim();
+          var rVal = document.getElementById('new-player-pos').value.trim();
+          var lVal = document.getElementById('new-player-level').value;
+          var uVal = document.getElementById('new-player-photo-url').value.trim();
+
+          if (!nVal || !rVal) {
+            showToast('Preencha nome e funcao do jogador.');
+            return;
+          }
+
+          state.players.push({
+            id: 'pl-' + Date.now(),
+            name: nVal,
+            role: rVal,
+            level: lVal,
+            photo: draftNewPlayerPhoto || uVal || PHOTO_1
+          });
+
+          draftNewPlayerPhoto = '';
+          addPlayerForm.reset();
+          saveSiteData();
+          renderAll();
+          renderAdminPlayers();
+          showToast('Jogador adicionado ao mural.');
+        });
+      }
+
+      function renderAdminPlayers() {
+        var wrap = document.getElementById('admin-players-container');
+        if (!wrap) return;
+
+        wrap.innerHTML = state.players
+          .map(function (p, idx) {
+            return (
+              '<div class="card-surface form-grid-3" style="padding: 12px; background-color: var(--bg); align-items: center;">' +
+              '  <input type="text" data-ap-name="' + idx + '" value="' + escapeHtml(p.name) + '" class="input-field" style="padding: 7px 10px; font-size: 13px;" />' +
+              '  <input type="text" data-ap-role="' + idx + '" value="' + escapeHtml(p.role) + '" class="input-field" style="padding: 7px 10px; font-size: 13px;" />' +
+              '  <div style="display: flex; gap: 8px; align-items: center;">' +
+              '    <select data-ap-level="' + idx + '" class="input-field" style="padding: 7px 10px; font-size: 13px;">' +
+              '      <option value="Iniciante"' + (p.level === 'Iniciante' ? ' selected' : '') + '>Iniciante</option>' +
+              '      <option value="Intermediario"' + (p.level === 'Intermediario' ? ' selected' : '') + '>Intermediario</option>' +
+              '      <option value="Avancado"' + (p.level === 'Avancado' ? ' selected' : '') + '>Avancado</option>' +
+              '    </select>' +
+              '    <button type="button" data-ap-save="' + idx + '" class="btn btn-secondary" style="min-height: 34px; padding: 5px 10px; font-size: 11px;">Salvar</button>' +
+              '    <button type="button" data-ap-del="' + idx + '" class="btn btn-danger" style="min-height: 34px; padding: 5px 10px; font-size: 11px;">Excluir</button>' +
+              '  </div>' +
+              '</div>'
+            );
+          })
+          .join('');
+
+        wrap.querySelectorAll('[data-ap-save]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var idx = Number(btn.getAttribute('data-ap-save'));
+            var cur = state.players[idx];
+            if (!cur) return;
+            var nEl = wrap.querySelector('[data-ap-name="' + idx + '"]');
+            var rEl = wrap.querySelector('[data-ap-role="' + idx + '"]');
+            var lEl = wrap.querySelector('[data-ap-level="' + idx + '"]');
+            state.players[idx] = Object.assign({}, cur, {
+              name: (nEl && nEl.value.trim()) || cur.name,
+              role: (rEl && rEl.value.trim()) || cur.role,
+              level: (lEl && lEl.value) || cur.level
+            });
+            saveSiteData();
+            renderAll();
+            showToast('Jogador atualizado.');
+          });
+        });
+
+        wrap.querySelectorAll('[data-ap-del]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var idx = Number(btn.getAttribute('data-ap-del'));
+            state.players.splice(idx, 1);
+            saveSiteData();
+            renderAll();
+            renderAdminPlayers();
+            showToast('Jogador removido.');
+          });
+        });
+      }
+
+      // Fundadores e lideranca no painel
+      var newFounderFileEl = document.getElementById('new-founder-photo-file');
+      if (newFounderFileEl) {
+        newFounderFileEl.addEventListener('change', function () {
+          var f = newFounderFileEl.files && newFounderFileEl.files[0];
+          if (!f) return;
+          var r = new FileReader();
+          r.onload = function () {
+            if (typeof r.result === 'string') {
+              draftNewFounderPhoto = r.result;
+              showToast('Foto local da lideranca carregada.');
+            }
+          };
+          r.readAsDataURL(f);
+        });
+      }
+
+      var addFounderForm = document.getElementById('admin-add-founder-form');
+      if (addFounderForm) {
+        addFounderForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var roleVal = document.getElementById('new-founder-role').value.trim();
+          var nameVal = document.getElementById('new-founder-name').value.trim();
+          var igVal = document.getElementById('new-founder-ig').value.trim() || state.club.instagram;
+          var photoUrlVal = document.getElementById('new-founder-photo-url').value.trim();
+          var bioVal = document.getElementById('new-founder-bio').value.trim();
+
+          if (!roleVal || !nameVal || !bioVal) {
+            showToast('Preencha funcao, nome e descricao.');
+            return;
+          }
+
+          state.founders.push({
+            id: 'fn-' + Date.now(),
+            role: roleVal,
+            name: nameVal,
+            instagram: igVal,
+            photo: draftNewFounderPhoto || photoUrlVal || PHOTO_3,
+            bio: bioVal
+          });
+
+          draftNewFounderPhoto = '';
+          addFounderForm.reset();
+          saveSiteData();
+          renderAll();
+          renderAdminFounders();
+          showToast('Lideranca adicionada.');
+        });
+      }
+
+      function renderAdminFounders() {
+        var wrap = document.getElementById('admin-founders-container');
+        if (!wrap) return;
+
+        wrap.innerHTML = state.founders
+          .map(function (f, idx) {
+            return (
+              '<div class="card-surface form-grid-3" style="padding: 12px; background-color: var(--bg); align-items: center;">' +
+              '  <input type="text" data-af-role="' + idx + '" value="' + escapeHtml(f.role) + '" class="input-field" style="padding: 7px 10px; font-size: 13px;" />' +
+              '  <input type="text" data-af-name="' + idx + '" value="' + escapeHtml(f.name) + '" class="input-field" style="padding: 7px 10px; font-size: 13px;" />' +
+              '  <div style="display: flex; gap: 8px; align-items: center;">' +
+              '    <input type="text" data-af-bio="' + idx + '" value="' + escapeHtml(f.bio) + '" class="input-field" style="padding: 7px 10px; font-size: 13px;" />' +
+              '    <button type="button" data-af-save="' + idx + '" class="btn btn-secondary" style="min-height: 34px; padding: 5px 10px; font-size: 11px;">Salvar</button>' +
+              '    <button type="button" data-af-del="' + idx + '" class="btn btn-danger" style="min-height: 34px; padding: 5px 10px; font-size: 11px;">Excluir</button>' +
+              '  </div>' +
+              '</div>'
+            );
+          })
+          .join('');
+
+        wrap.querySelectorAll('[data-af-save]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var idx = Number(btn.getAttribute('data-af-save'));
+            var cur = state.founders[idx];
+            if (!cur) return;
+            var rEl = wrap.querySelector('[data-af-role="' + idx + '"]');
+            var nEl = wrap.querySelector('[data-af-name="' + idx + '"]');
+            var bEl = wrap.querySelector('[data-af-bio="' + idx + '"]');
+            state.founders[idx] = Object.assign({}, cur, {
+              role: (rEl && rEl.value.trim()) || cur.role,
+              name: (nEl && nEl.value.trim()) || cur.name,
+              bio: (bEl && bEl.value.trim()) || cur.bio
+            });
+            saveSiteData();
+            renderAll();
+            showToast('Lideranca atualizada.');
+          });
+        });
+
+        wrap.querySelectorAll('[data-af-del]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var idx = Number(btn.getAttribute('data-af-del'));
+            state.founders.splice(idx, 1);
+            saveSiteData();
+            renderAll();
+            renderAdminFounders();
+            showToast('Registro de lideranca removido.');
+          });
+        });
+      }
+
+      // FAQ no painel
+      var addFaqForm = document.getElementById('admin-add-faq-form');
+      if (addFaqForm) {
+        addFaqForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var qVal = document.getElementById('new-faq-q').value.trim();
+          var aVal = document.getElementById('new-faq-a').value.trim();
+          if (!qVal || !aVal) {
+            showToast('Preencha pergunta e resposta.');
+            return;
+          }
+          state.faqs.push({ question: qVal, answer: aVal });
+          addFaqForm.reset();
+          saveSiteData();
+          renderAll();
+          renderAdminFaqs();
+          showToast('Pergunta adicionada ao FAQ.');
+        });
+      }
+
+      function renderAdminFaqs() {
+        var wrap = document.getElementById('admin-faq-container');
+        if (!wrap) return;
+
+        wrap.innerHTML = state.faqs
+          .map(function (item, idx) {
+            return (
+              '<div class="card-surface form-grid-3" style="padding: 12px; background-color: var(--bg); align-items: center;">' +
+              '  <input type="text" data-aq-q="' + idx + '" value="' + escapeHtml(item.question) + '" class="input-field" style="padding: 7px 10px; font-size: 13px;" />' +
+              '  <input type="text" data-aq-a="' + idx + '" value="' + escapeHtml(item.answer) + '" class="input-field" style="padding: 7px 10px; font-size: 13px;" />' +
+              '  <div style="display: flex; gap: 8px;">' +
+              '    <button type="button" data-aq-save="' + idx + '" class="btn btn-secondary" style="min-height: 34px; padding: 5px 10px; font-size: 11px;">Salvar</button>' +
+              '    <button type="button" data-aq-del="' + idx + '" class="btn btn-danger" style="min-height: 34px; padding: 5px 10px; font-size: 11px;">Excluir</button>' +
+              '  </div>' +
+              '</div>'
+            );
+          })
+          .join('');
+
+        wrap.querySelectorAll('[data-aq-save]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var idx = Number(btn.getAttribute('data-aq-save'));
+            var cur = state.faqs[idx];
+            if (!cur) return;
+            var qEl = wrap.querySelector('[data-aq-q="' + idx + '"]');
+            var aEl = wrap.querySelector('[data-aq-a="' + idx + '"]');
+            state.faqs[idx] = {
+              question: (qEl && qEl.value.trim()) || cur.question,
+              answer: (aEl && aEl.value.trim()) || cur.answer
+            };
+            saveSiteData();
+            renderAll();
+            showToast('Pergunta do FAQ atualizada.');
+          });
+        });
+
+        wrap.querySelectorAll('[data-aq-del]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var idx = Number(btn.getAttribute('data-aq-del'));
+            state.faqs.splice(idx, 1);
+            saveSiteData();
+            renderAll();
+            renderAdminFaqs();
+            showToast('Pergunta removida.');
+          });
+        });
+      }
+
+      // Exportar, importar e restaurar padrao
+      var exportBtn = document.getElementById('btn-export-json');
+      var importBtn = document.getElementById('btn-import-json');
+      var restoreBtn = document.getElementById('btn-restore-default');
+      var jsonArea = document.getElementById('admin-json-textarea');
+
+      if (exportBtn && jsonArea) {
+        exportBtn.addEventListener('click', function () {
+          var content = JSON.stringify(state, null, 2);
+          jsonArea.value = content;
+          copyToClipboard(content, 'JSON exportado e copiado.');
+        });
+      }
+
+      if (importBtn && jsonArea) {
+        importBtn.addEventListener('click', function () {
+          try {
+            var raw = jsonArea.value.trim();
+            if (!raw) {
+              showToast('Cole um JSON valido antes de importar.');
+              return;
+            }
+            var parsed = JSON.parse(raw);
+            if (!parsed || typeof parsed !== 'object' || !parsed.club) {
+              showToast('JSON sem estrutura valida do clube.');
+              return;
+            }
+            var def = createInitialData();
+            state = {
+              club: Object.assign({}, def.club, parsed.club),
+              uniforms: Array.isArray(parsed.uniforms) && parsed.uniforms.length > 0 ? parsed.uniforms.slice(0, 3) : def.uniforms,
+              players: Array.isArray(parsed.players) ? parsed.players : def.players,
+              founders: Array.isArray(parsed.founders) ? parsed.founders : def.founders,
+              steps: Array.isArray(parsed.steps) && parsed.steps.length > 0 ? parsed.steps : def.steps,
+              rules: Array.isArray(parsed.rules) && parsed.rules.length > 0 ? parsed.rules : def.rules,
+              faqs: Array.isArray(parsed.faqs) ? parsed.faqs : def.faqs,
+              registrations: Array.isArray(parsed.registrations) ? parsed.registrations : []
+            };
+            saveSiteData();
+            renderAll();
+            fillAdminPanel();
+            showToast('JSON importado com sucesso.');
+          } catch (e) {
+            showToast('Erro ao ler JSON. Confira a formatacao.');
+          }
+        });
+      }
+
+      if (restoreBtn) {
+        restoreBtn.addEventListener('click', function () {
+          state = createInitialData();
+          saveSiteData();
+          renderAll();
+          fillAdminPanel();
+          showToast('Dados padrao do FALCOES VBC restaurados.');
+        });
+      }
+
+      renderAll();
+    })();
+  </script>
+</body>
+</html>
